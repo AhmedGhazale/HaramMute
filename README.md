@@ -103,7 +103,18 @@ Once the model is ready, the Start Service button becomes clickable.
 Choose the desired output audio device from the dropdown menu.
 The input device is fixed and must be set externally (e.g. VB-Cable).
 
-### 4️⃣ Adjust Audio Parameters (Optional)
+### 4️⃣ Set VB-Cable as the System Output Device (Windows)
+
+Before starting the service, you must configure **Windows system audio** to route sound through VB-Cable:
+
+1. Right-click the **speaker icon** in the Windows taskbar
+2. Open **Sound settings**
+3. Under **Output**, select: **CABLE Input (VB-Audio Virtual Cable)**
+
+This step ensures that all system audio is routed into HaramMute through the virtual cable and can be processed by the AI model.
+
+> ⚠️ If this step is skipped, HaramMute will not receive any audio to process.
+### 5️⃣ Adjust Audio Parameters (Optional)
 You may adjust these before starting the service:
 * Block Size – Controls latency vs stability.
 * Max Buffer Size – Controls temporal context.
@@ -111,7 +122,7 @@ You may adjust these before starting the service:
 
 Default values are recommended for most systems.
 
-### 5️⃣ Understand Performance Metrics
+### 6️⃣ Understand Performance Metrics
 The UI displays real-time performance information to help you evaluate system stability:
 * **Processing Time (ms)**: Time the Demucs model takes to process one audio block.
 
@@ -131,16 +142,16 @@ RTF = Processing Time / Block Time
 | `≥ 1.0` | Audio dropouts |
 
 **IMPORTANT** : If the RTF reaches or exceeds 1.0, increase the block size or reduce system load.
-### 5️⃣ Start the Service
+### 7️⃣ Start the Service
 Click Start Service to begin real-time audio processing.
 The app will start capturing audio, processing it with ai, and streaming the result to the output device.
 Performance metrics (processing time, block time, RTF) update live in the UI.
 
-### 6️⃣ Run in the Background
+### 8️⃣ Run in the Background
 Closing the window will minimize the app to the system tray
 The service continues running until you stop it or exit the app from the tray menu
 
-### 7️⃣ Stop or Exit
+### 9️⃣ Stop or Exit
 Click Stop Service to stop audio processing
 Use the system tray menu to exit the application completely
 
