@@ -33,19 +33,10 @@ Download VB-Cable if you don’t have it:
 
 ### 📦 Option 1: Download Pre-Built Application (Recommended)
 
-This is the **fastest way** to get started.
-
-#### Steps
-
-1. Go to the **Releases** page of this repository.
-2. Download the latest **Windows build**:
-   - `HaramMute-win64.zip`
-3. Extract the ZIP file.
-4. Run:
-   ```text
-   HaramMute.exe
-    ```
-
+This is the **fastest way** to get started.  
+you can go the the [Releases](https://github.com/AhmedGhazale/HaramMute/releases) page. or download the suitable version here:
+* **cpu version** : [Here](https://github.com/AhmedGhazale/HaramMute/releases/download/v1.0.0/HaramMute_cpu.exe)
+*  **cuda version** : [Here](https://drive.google.com/file/d/1-aDu3Y2lEfeCXGtMcUIJdk81A0dmC13v/view?usp=sharing)
 ### 🧪 Option 2: Run From Source (Developers / Advanced Users)
 Choose this option if you want to:
 * Modify the code
@@ -83,6 +74,7 @@ pyinstaller build.spec
 ```
 The executable will be created in: $root/dist/HaramMute.exe
 
+---   
 ## ▶️How to Run HaramMute
 
 HaramMute is designed to run quietly in the background as a **system tray application** while processing audio in real time.
@@ -152,6 +144,7 @@ The service continues running until you stop it or exit the app from the tray me
 Click Stop Service to stop audio processing
 Use the system tray menu to exit the application completely
 
+---
 ## ❗Troubleshooting
 
 ### 🔇 No Audio Output
