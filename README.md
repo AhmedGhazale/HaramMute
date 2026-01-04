@@ -35,8 +35,8 @@ Download VB-Cable if you don’t have it:
 
 This is the **fastest way** to get started.  
 you can go the the [Releases](https://github.com/AhmedGhazale/HaramMute/releases) page. or download the suitable version here:
-* **cpu version** : [Here](https://github.com/AhmedGhazale/HaramMute/releases/download/v1.0.0/HaramMute_cpu.exe)
-*  **cuda version** : [Here](https://drive.google.com/file/d/1-aDu3Y2lEfeCXGtMcUIJdk81A0dmC13v/view?usp=sharing)
+* **cpu version** : [Here](https://drive.google.com/file/d/181IzkqJ5JZ43DNLj9uik6N5hjEUjwTtg/view?usp=sharing)
+*  **cuda version** : [Here](https://drive.google.com/file/d/10q4QrfysxY_IyCx8zr0Z3iHJuDUUVEj6/view?usp=sharing)
 ### 🧪 Option 2: Run From Source (Developers / Advanced Users)
 Choose this option if you want to:
 * Modify the code
