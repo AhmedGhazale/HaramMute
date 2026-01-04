@@ -4,7 +4,7 @@ a = Analysis(
     ['app/main.py'],
     pathex=[],
     binaries=[],
-    datas=[('assets', 'assets')],
+    datas=[('assets', 'assets'),('torch_cache', 'torch_cache')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

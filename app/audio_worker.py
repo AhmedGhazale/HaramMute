@@ -1,9 +1,17 @@
+import sys
+import os
 import numpy as np
 import torch
 from torchaudio.pipelines import HDEMUCS_HIGH_MUSDB_PLUS
 from time import time
 from PyQt6.QtCore import  pyqtSignal, QObject
 import sounddevice as sd
+import torchaudio.utils.download as ta_download
+# disable progress bar as it causes pyqt to crash
+_original_download = ta_download._download
+def _download_no_progress(key, path, progress=False):
+    return _original_download(key, path, progress=False)
+ta_download._download = _download_no_progress
 
 HARDCODED_INPUT = "CABLE Output (VB-Audio Virtual , MME"
 
@@ -29,6 +37,7 @@ class AudioWorker(QObject):
         self.buffer = None
 
     def load_model(self):
+        torch.hub.set_dir(self.resource_path("torch_cache"))
         self.log_signal.emit(f"Loading model on {self.device} (please don't start until the model is ready)")
         self.log_signal.emit(f"if this is first time opening the app the model will be downloaded (!300 MB)")
 
@@ -96,3 +105,13 @@ class AudioWorker(QObject):
             self.stream.close()
         self.is_running = False
         self.log_signal.emit("Stream stopped.")
+
+    def resource_path(self, relative_path):
+        """ Get absolute path to resource, works for dev and for PyInstaller """
+        try:
+            # PyInstaller creates a temp folder and stores path in _MEIPASS
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+
+        return os.path.join(base_path, relative_path)
