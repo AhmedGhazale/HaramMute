@@ -17,7 +17,7 @@ HARDCODED_INPUT = "CABLE Output (VB-Audio Virtual , MME"
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Haram Mute")
+        self.setWindowTitle("Music Mute")
         self.resize(500, 400)
 
         # UI State

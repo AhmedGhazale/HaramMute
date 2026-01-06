@@ -1,9 +1,9 @@
-# 🎧 HaramMute  
+# 🎧 MusicMute  
 **Real-time Music filtring using AI**
 
 ![cover](assets/cover.png)
 
-HaramMute is a lightweight desktop application that performs **real-timeMusic filtring** using **AI**.  
+MusicMute is a lightweight desktop application that performs **real-timeMusic filtring** using **AI**.  
 It runs quietly in the **system tray**, processes live audio streams, and is designed to be packaged as a **standalone executable** using PyInstaller.
 
 The app is built with **PyQt6**, **sounddevice**, and **PyTorch + torchaudio**, with CUDA acceleration when available.
@@ -20,7 +20,7 @@ The app is built with **PyQt6**, **sounddevice**, and **PyTorch + torchaudio**, 
 ---
 ## 🚀 Getting Started
 
-This section covers the **quickest ways to start using HaramMute on Windows**, whether you prefer a **ready-to-use executable** or running the app **from source**.
+This section covers the **quickest ways to start using MusicMute on Windows**, whether you prefer a **ready-to-use executable** or running the app **from source**.
 
 
 ### 🪟 Windows
@@ -45,8 +45,8 @@ Choose this option if you want to:
 
 #### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/AhmedGhazale/HaramMute
-cd HaramMute
+git clone https://github.com/AhmedGhazale/MusicMute
+cd MusicMute
 ```
 #### 2️⃣ Create a virtual environment(Optional)
 ```bash
@@ -72,18 +72,18 @@ If you want to package the app yourself:
 ```bash
 pyinstaller build.spec
 ```
-The executable will be created in: $root/dist/HaramMute.exe
+The executable will be created in: $root/dist/MusicMute.exe
 
 ---   
-## ▶️How to Run HaramMute
+## ▶️How to Run MusicMute
 
-HaramMute is designed to run quietly in the background as a **system tray application** while processing audio in real time.
+MusicMute is designed to run quietly in the background as a **system tray application** while processing audio in real time.
 
 ---
 
 ### 1️⃣ Launch the Application
 
-- Start the application by running **HaramMute.exe** (pre-built version)  
+- Start the application by running **MusicMute.exe** (pre-built version)  
   **or**
 - From source:
   ```bash
@@ -111,9 +111,9 @@ Before starting the service, you must configure **Windows system audio** to rout
 2. Open **Sound settings**
 3. Under **Output**, select: **CABLE Input (VB-Audio Virtual Cable)**
 
-This step ensures that all system audio is routed into HaramMute through the virtual cable and can be processed by the AI model.
+This step ensures that all system audio is routed into MusicMute through the virtual cable and can be processed by the AI model.
 
-> ⚠️ If this step is skipped, HaramMute will not receive any audio to process.
+> ⚠️ If this step is skipped, MusicMute will not receive any audio to process.
 ### 5️⃣ Adjust Audio Parameters (Optional)
 You may adjust these before starting the service:
 * Block Size – Controls latency vs stability.
