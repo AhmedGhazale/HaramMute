@@ -39,7 +39,7 @@ class AudioWorker(QObject):
     def load_model(self):
         torch.hub.set_dir(self.resource_path("torch_cache"))
         self.log_signal.emit(f"Loading model on {self.device} (please don't start until the model is ready)")
-        self.log_signal.emit(f"if this is first time opening the app the model will be downloaded (!300 MB)")
+        self.log_signal.emit("if this is first time opening the app the model will be downloaded (!300 MB)")
 
         bundle = HDEMUCS_HIGH_MUSDB_PLUS
         self.model = bundle.get_model().to(self.device).eval()
@@ -60,7 +60,7 @@ class AudioWorker(QObject):
             # Optionally log latency (careful with spamming)
             # self.log_signal.emit(f"Infer: {(e-s)*1000:.2f}ms")
             processing_ms = (e - s) * 1000
-            block_ms = (self.block_size / 41000) * 1000
+            block_ms = (self.block_size / 44100) * 1000
             self.timing_signal.emit(processing_ms, block_ms)
 
         vocals = out[0][3].cpu().numpy().T.astype(np.float32)
@@ -80,6 +80,7 @@ class AudioWorker(QObject):
                 vocals = vocals[:frames]
             outdata[:] = vocals
         except Exception as e:
+            self.log_signal.emit(f"Audio callback Error: {e}")
             outdata[:] = np.zeros_like(indata)
 
     def start_stream(self):
