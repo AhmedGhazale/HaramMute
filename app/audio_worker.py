@@ -60,7 +60,7 @@ class AudioWorker(QObject):
             # Optionally log latency (careful with spamming)
             # self.log_signal.emit(f"Infer: {(e-s)*1000:.2f}ms")
             processing_ms = (e - s) * 1000
-            block_ms = (self.block_size / 41000) * 1000
+            block_ms = (self.block_size / 44100) * 1000
             self.timing_signal.emit(processing_ms, block_ms)
 
         vocals = out[0][3].cpu().numpy().T.astype(np.float32)
